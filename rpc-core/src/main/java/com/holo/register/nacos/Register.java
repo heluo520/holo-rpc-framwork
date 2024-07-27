@@ -1,6 +1,5 @@
 package com.holo.register.nacos;
 
-import com.holo.properties.RegisterProperties;
 
 /**
  * Created with Intellij IDEA.
