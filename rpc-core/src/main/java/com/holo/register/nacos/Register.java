@@ -12,13 +12,13 @@ import com.holo.properties.RegisterProperties;
 public interface Register {
     /**
      * 注册实例
-     * @param namingServerAddress 注册中心地址 ip:port
+     *
      * @param serverName 要注册的服务名
      * @param ip ip
      * @param port 端口
      * @throws Throwable 异常
      */
-    void registerService(String namingServerAddress,String serverName,String ip,int port) throws Throwable;
+    void registerService(String serverName,String ip,int port) throws Throwable;
 
     /**
      * 注销实例

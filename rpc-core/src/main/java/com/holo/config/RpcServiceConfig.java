@@ -1,5 +1,7 @@
 package com.holo.config;
 
+import lombok.*;
+
 /**
  * Created with Intellij IDEA.
  *
@@ -7,11 +9,19 @@ package com.holo.config;
  * @Date: 2024-07-24
  * @Description:
  */
+@Builder
+@ToString
+@Getter
+@Setter
+@AllArgsConstructor
 public class RpcServiceConfig {
-    private String namingServerAddress;
+    private String namingServerAddress = "127.0.0.1:8848";
     private String serviceName;
     private String ip;
     private int port;
+    private String version = "";
+    private String group = "";
+    private Object service;
 
     public RpcServiceConfig() {
     }
@@ -22,39 +32,15 @@ public class RpcServiceConfig {
         this.ip = ip;
         this.port = port;
     }
-
-    public String getIp() {
-        return ip;
-    }
-
-    public RpcServiceConfig ip(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public RpcServiceConfig port(int port) {
-        this.port = port;
-        return this;
-    }
-
-    public String getNamingServerAddress() {
-        return namingServerAddress;
-    }
-    public RpcServiceConfig namingServerAddress(String namingServerAddress) {
-        this.namingServerAddress = namingServerAddress;
-        return this;
+    public String getRpcServiceName() {
+        return this.getServiceName() + this.getGroup() + this.getVersion();
     }
 
     public String getServiceName() {
-        return serviceName;
+        return this.service.getClass().getInterfaces()[0].getCanonicalName();
     }
+//    public String getServiceName() {
+//        return serviceName;
+//    }
 
-    public RpcServiceConfig serviceName(String serviceName) {
-        this.serviceName = serviceName;
-        return this;
-    }
 }

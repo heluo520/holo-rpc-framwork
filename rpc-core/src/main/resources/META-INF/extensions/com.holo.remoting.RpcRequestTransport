@@ -1,0 +1,1 @@
+netty=com.holo.remoting.netty.client.NettyRpcClient

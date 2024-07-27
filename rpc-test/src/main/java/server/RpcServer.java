@@ -66,7 +66,7 @@ public class RpcServer{
                             socketChannel.pipeline().addLast(new NettyServerHandler());
                         }
                     });
-            //绑定端口，等待绑定成功
+            //绑定端口，等待绑定成功,ip不写默认获取本地ip
             ChannelFuture f = b.bind(port).sync();
             //等到服务端监听端口关闭
             f.channel().closeFuture().sync();

@@ -1,6 +1,6 @@
 package com.holo.exception;
 
-import com.holo.enums.RpcErrorMessage;
+import com.holo.enums.RpcErrorMessageEnum;
 
 /**
  * Created with Intellij IDEA.
@@ -9,15 +9,18 @@ import com.holo.enums.RpcErrorMessage;
  * @Date: 2024-07-23
  * @Description:
  */
-public class RpcException extends BaseException{
+public class RpcException extends RuntimeException{
     public RpcException() {
     }
 
     public RpcException(String message) {
         super(message);
     }
-    public RpcException(RpcErrorMessage msg,String detail){
+    public RpcException(RpcErrorMessageEnum msg, String detail){
         super(msg.Message()+": "+detail);
+    }
+    public RpcException(String message,Throwable throwable){
+        super(message,throwable);
     }
 
 }

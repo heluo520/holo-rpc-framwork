@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @Author: zws
  * @Date: 2024-07-22
- * @Description:
+ * @Description: 测试nacos
  */
 @RestController
 @RequestMapping("/test")
@@ -37,7 +37,7 @@ public class TestApi {
         return serverRegister.registerService(url,registerProperties);*/
         log.info("服务注册");
         try {
-            serverRegister.registerService("127.0.0.1:8848","rpc-core","127.0.0.1",8080);
+            serverRegister.registerService("rpc-core","127.0.0.1",8080);
         } catch (Throwable e) {
             e.printStackTrace();
         }
@@ -50,7 +50,7 @@ public class TestApi {
 
         try {
             log.info("服务发现：{}",serviceName);
-            RpcServiceConfig config = new RpcServiceConfig().namingServerAddress("127.0.0.1:8848").serviceName(serviceName);
+            RpcServiceConfig config = RpcServiceConfig.builder().namingServerAddress("127.0.0.1:8848").serviceName(serviceName).build();
 //            Instance instance = serverDiscover.discoverService();
 //            return instance;
         } catch (Throwable e) {

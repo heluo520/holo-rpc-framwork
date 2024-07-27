@@ -7,7 +7,7 @@ package com.holo.enums;
  * @Date: 2024-07-22
  * @Description:
  */
-public enum RpcErrorMessage {
+public enum RpcErrorMessageEnum {
     CLIENT_CONNECT_SERVER_FAILURE("客户端连接失败"),
     SERVICE_INVOCATION_FAILURE("服务调用失败"),
     SERVICE_CAN_NOT_BE_FOUND("服务未找到"),
@@ -16,7 +16,7 @@ public enum RpcErrorMessage {
 
     private final String message;
 
-    RpcErrorMessage(String message) {
+    RpcErrorMessageEnum(String message) {
         this.message = message;
     }
 

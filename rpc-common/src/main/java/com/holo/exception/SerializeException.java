@@ -7,7 +7,7 @@ package com.holo.exception;
  * @Date: 2024-07-23
  * @Description:
  */
-public class SerializeException extends BaseException{
+public class SerializeException extends RuntimeException{
     public SerializeException() {
     }
 

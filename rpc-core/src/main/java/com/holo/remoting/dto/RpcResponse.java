@@ -1,6 +1,5 @@
 package com.holo.remoting.dto;
 
-import com.holo.enums.RpcErrorMessage;
 import com.holo.enums.StatusCode;
 import lombok.*;
 

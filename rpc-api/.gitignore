@@ -11,8 +11,6 @@ target/
 *.iws
 *.iml
 *.ipr
-.idea/encodings.xml
-.idea/**
 
 ### Eclipse ###
 .apt_generated
